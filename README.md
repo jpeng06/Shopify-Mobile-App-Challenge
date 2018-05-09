@@ -8,7 +8,7 @@
 
 ## Enhancement 
 
-I don't have a lot of time for this project and I keep updating during the break from my work
+I don't have a lot of time for this project at this moment but I keep updating during the break from my work
 
 - Add order detail view when user taps each order summary cell
 - Show pages on how view controller and add previous button to let user go back to previous page
