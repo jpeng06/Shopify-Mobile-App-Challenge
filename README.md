@@ -27,5 +27,6 @@ I was assuming that end user will be the person who prepares customers' order at
 - Written in Switch 3 
 - No 3rd party libraries were used
 - Core data is added for later implementations 
+- background colours are randomly assigned 
 
 2018 © John Peng
