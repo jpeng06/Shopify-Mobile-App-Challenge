@@ -1,4 +1,4 @@
-# Spotify Mobile App Challenge  
+# Shopify Mobile App Challenge  
 
 ## Requirement 
 
@@ -55,6 +55,6 @@ I was assuming that end user will be the person who prepares customers' order at
 
 ## Demo
 
-![Demo](https://github.com/jpeng06/Spotify-Mobile-App-Challenge--/blob/master/demo.png)
+![Demo](https://github.com/jpeng06/Shopify-Mobile-App-Challenge/blob/master/demo.png)
 
 2018 © John Peng
