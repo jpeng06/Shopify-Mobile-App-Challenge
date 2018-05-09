@@ -11,6 +11,8 @@ Each province will be its own subheading. So, “Orders by Province” will be t
 
 You can access the list of orders, and their properties, via the Shopify Orders List REST API. Reading through the properties’ descriptions will help you determine how to categorize orders in each category. It is possible for a single order to be in more than one category.
 
+Doc: https://docs.google.com/document/d/1oaJN3JNlbvRuljFafPNwzh-n6y1KxYCEkITCEt1Ngl0/edit?ts=5ae0b305
+
 ## API
 
 https://shopicruit.myshopify.com/admin/orders.json
