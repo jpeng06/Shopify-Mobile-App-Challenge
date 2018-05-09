@@ -7,27 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE080089209FBDB3001BAD70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE080088209FBDB3001BAD70 /* AppDelegate.swift */; };
-		DE08008B209FBDB3001BAD70 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE08008A209FBDB3001BAD70 /* OrderViewController.swift */; };
-		DE08008E209FBDB3001BAD70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE08008C209FBDB3001BAD70 /* Main.storyboard */; };
-		DE080091209FBDB3001BAD70 /* Shopify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE08008F209FBDB3001BAD70 /* Shopify.xcdatamodeld */; };
-		DE080093209FBDB4001BAD70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE080092209FBDB4001BAD70 /* Assets.xcassets */; };
-		DE080096209FBDB4001BAD70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE080094209FBDB4001BAD70 /* LaunchScreen.storyboard */; };
+		DE1D5D22208AC239009EFF9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D5D21208AC239009EFF9D /* AppDelegate.swift */; };
+		DE1D5D27208AC239009EFF9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1D5D25208AC239009EFF9D /* Main.storyboard */; };
+		DE1D5D2A208AC239009EFF9D /* Pure_Wallpaper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE1D5D28208AC239009EFF9D /* Pure_Wallpaper.xcdatamodeld */; };
+		DE1D5D2C208AC23B009EFF9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1D5D2B208AC23B009EFF9D /* Assets.xcassets */; };
+		DE1D5D2F208AC23B009EFF9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1D5D2D208AC23B009EFF9D /* LaunchScreen.storyboard */; };
+		DE7A545120A267380055F26A /* SettingPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7A544F20A267380055F26A /* SettingPopUpViewController.swift */; };
+		DE7A545220A267380055F26A /* SettingPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7A545020A267380055F26A /* SettingPopUpViewController.xib */; };
+		DE7A545420A287890055F26A /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7A545320A287890055F26A /* Order.swift */; };
+		DEC8FBD8209155DF0071C26F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8FBD7209155DF0071C26F /* HomeViewController.swift */; };
+		DEC8FBDB209158AD0071C26F /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8FBD9209158AD0071C26F /* ImageCollectionViewCell.swift */; };
+		DEC8FBDC209158AD0071C26F /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC8FBDA209158AD0071C26F /* ImageCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DE080085209FBDB3001BAD70 /* Shopify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopify.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE080088209FBDB3001BAD70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE08008A209FBDB3001BAD70 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
-		DE08008D209FBDB3001BAD70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DE080090209FBDB3001BAD70 /* Shopify.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shopify.xcdatamodel; sourceTree = "<group>"; };
-		DE080092209FBDB4001BAD70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DE080095209FBDB4001BAD70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DE080097209FBDB5001BAD70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE1D5D1E208AC239009EFF9D /* Shopify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1D5D21208AC239009EFF9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE1D5D26208AC239009EFF9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE1D5D29208AC239009EFF9D /* Pure_Wallpaper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pure_Wallpaper.xcdatamodel; sourceTree = "<group>"; };
+		DE1D5D2B208AC23B009EFF9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE1D5D2E208AC23B009EFF9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE1D5D30208AC23B009EFF9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE7A544F20A267380055F26A /* SettingPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPopUpViewController.swift; sourceTree = "<group>"; };
+		DE7A545020A267380055F26A /* SettingPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingPopUpViewController.xib; sourceTree = "<group>"; };
+		DE7A545320A287890055F26A /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		DEC8FBD7209155DF0071C26F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DEC8FBD9209158AD0071C26F /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		DEC8FBDA209158AD0071C26F /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DE080082209FBDB3001BAD70 /* Frameworks */ = {
+		DE1D5D1B208AC239009EFF9D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,72 +47,117 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DE08007C209FBDB3001BAD70 = {
+		DE1D5D15208AC239009EFF9D = {
 			isa = PBXGroup;
 			children = (
-				DE080087209FBDB3001BAD70 /* Shopify */,
-				DE080086209FBDB3001BAD70 /* Products */,
+				DE1D5D20208AC239009EFF9D /* Shopify */,
+				DE1D5D1F208AC239009EFF9D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		DE080086209FBDB3001BAD70 /* Products */ = {
+		DE1D5D1F208AC239009EFF9D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DE080085209FBDB3001BAD70 /* Shopify.app */,
+				DE1D5D1E208AC239009EFF9D /* Shopify.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DE080087209FBDB3001BAD70 /* Shopify */ = {
+		DE1D5D20208AC239009EFF9D /* Shopify */ = {
 			isa = PBXGroup;
 			children = (
-				DE080088209FBDB3001BAD70 /* AppDelegate.swift */,
-				DE08008A209FBDB3001BAD70 /* OrderViewController.swift */,
-				DE08008C209FBDB3001BAD70 /* Main.storyboard */,
-				DE080092209FBDB4001BAD70 /* Assets.xcassets */,
-				DE080094209FBDB4001BAD70 /* LaunchScreen.storyboard */,
-				DE080097209FBDB5001BAD70 /* Info.plist */,
-				DE08008F209FBDB3001BAD70 /* Shopify.xcdatamodeld */,
+				DEC739BE20A349E80099EE8E /* Home */,
+				DEC739BD20A349CA0099EE8E /* Storyboard */,
+				DEC739BC20A349A40099EE8E /* Model */,
+				DEC739BB20A348410099EE8E /* Settings */,
+				DEC739BA20A3482F0099EE8E /* Cell */,
+				DE1D5D21208AC239009EFF9D /* AppDelegate.swift */,
+				DE1D5D2B208AC23B009EFF9D /* Assets.xcassets */,
+				DE1D5D30208AC23B009EFF9D /* Info.plist */,
 			);
 			path = Shopify;
+			sourceTree = "<group>";
+		};
+		DEC739BA20A3482F0099EE8E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DEC8FBD9209158AD0071C26F /* ImageCollectionViewCell.swift */,
+				DEC8FBDA209158AD0071C26F /* ImageCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DEC739BB20A348410099EE8E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DE7A544F20A267380055F26A /* SettingPopUpViewController.swift */,
+				DE7A545020A267380055F26A /* SettingPopUpViewController.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DEC739BC20A349A40099EE8E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE1D5D28208AC239009EFF9D /* Pure_Wallpaper.xcdatamodeld */,
+				DE7A545320A287890055F26A /* Order.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DEC739BD20A349CA0099EE8E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DE1D5D25208AC239009EFF9D /* Main.storyboard */,
+				DE1D5D2D208AC23B009EFF9D /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		DEC739BE20A349E80099EE8E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DEC8FBD7209155DF0071C26F /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DE080084209FBDB3001BAD70 /* Shopify */ = {
+		DE1D5D1D208AC239009EFF9D /* Shopify */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DE08009A209FBDB5001BAD70 /* Build configuration list for PBXNativeTarget "Shopify" */;
+			buildConfigurationList = DE1D5D33208AC23B009EFF9D /* Build configuration list for PBXNativeTarget "Shopify" */;
 			buildPhases = (
-				DE080081209FBDB3001BAD70 /* Sources */,
-				DE080082209FBDB3001BAD70 /* Frameworks */,
-				DE080083209FBDB3001BAD70 /* Resources */,
+				DE1D5D1A208AC239009EFF9D /* Sources */,
+				DE1D5D1B208AC239009EFF9D /* Frameworks */,
+				DE1D5D1C208AC239009EFF9D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Shopify;
-			productName = Shopify;
-			productReference = DE080085209FBDB3001BAD70 /* Shopify.app */;
+			productName = "Pure Wallpaper";
+			productReference = DE1D5D1E208AC239009EFF9D /* Shopify.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DE08007D209FBDB3001BAD70 /* Project object */ = {
+		DE1D5D16208AC239009EFF9D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
-				ORGANIZATIONNAME = com.jpeng.go.shopify;
+				ORGANIZATIONNAME = com.jpeng.wallpaper.pure;
 				TargetAttributes = {
-					DE080084209FBDB3001BAD70 = {
+					DE1D5D1D208AC239009EFF9D = {
 						CreatedOnToolsVersion = 9.3;
 					};
 				};
 			};
-			buildConfigurationList = DE080080209FBDB3001BAD70 /* Build configuration list for PBXProject "Shopify" */;
+			buildConfigurationList = DE1D5D19208AC239009EFF9D /* Build configuration list for PBXProject "Shopify" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,55 +165,60 @@
 				en,
 				Base,
 			);
-			mainGroup = DE08007C209FBDB3001BAD70;
-			productRefGroup = DE080086209FBDB3001BAD70 /* Products */;
+			mainGroup = DE1D5D15208AC239009EFF9D;
+			productRefGroup = DE1D5D1F208AC239009EFF9D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DE080084209FBDB3001BAD70 /* Shopify */,
+				DE1D5D1D208AC239009EFF9D /* Shopify */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DE080083209FBDB3001BAD70 /* Resources */ = {
+		DE1D5D1C208AC239009EFF9D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE080096209FBDB4001BAD70 /* LaunchScreen.storyboard in Resources */,
-				DE080093209FBDB4001BAD70 /* Assets.xcassets in Resources */,
-				DE08008E209FBDB3001BAD70 /* Main.storyboard in Resources */,
+				DE1D5D2F208AC23B009EFF9D /* LaunchScreen.storyboard in Resources */,
+				DE1D5D2C208AC23B009EFF9D /* Assets.xcassets in Resources */,
+				DEC8FBDC209158AD0071C26F /* ImageCollectionViewCell.xib in Resources */,
+				DE1D5D27208AC239009EFF9D /* Main.storyboard in Resources */,
+				DE7A545220A267380055F26A /* SettingPopUpViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DE080081209FBDB3001BAD70 /* Sources */ = {
+		DE1D5D1A208AC239009EFF9D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE080091209FBDB3001BAD70 /* Shopify.xcdatamodeld in Sources */,
-				DE08008B209FBDB3001BAD70 /* OrderViewController.swift in Sources */,
-				DE080089209FBDB3001BAD70 /* AppDelegate.swift in Sources */,
+				DEC8FBDB209158AD0071C26F /* ImageCollectionViewCell.swift in Sources */,
+				DEC8FBD8209155DF0071C26F /* HomeViewController.swift in Sources */,
+				DE7A545420A287890055F26A /* Order.swift in Sources */,
+				DE7A545120A267380055F26A /* SettingPopUpViewController.swift in Sources */,
+				DE1D5D22208AC239009EFF9D /* AppDelegate.swift in Sources */,
+				DE1D5D2A208AC239009EFF9D /* Pure_Wallpaper.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DE08008C209FBDB3001BAD70 /* Main.storyboard */ = {
+		DE1D5D25208AC239009EFF9D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DE08008D209FBDB3001BAD70 /* Base */,
+				DE1D5D26208AC239009EFF9D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		DE080094209FBDB4001BAD70 /* LaunchScreen.storyboard */ = {
+		DE1D5D2D208AC23B009EFF9D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DE080095209FBDB4001BAD70 /* Base */,
+				DE1D5D2E208AC23B009EFF9D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -166,7 +226,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		DE080098209FBDB5001BAD70 /* Debug */ = {
+		DE1D5D31208AC23B009EFF9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -226,7 +286,7 @@
 			};
 			name = Debug;
 		};
-		DE080099209FBDB5001BAD70 /* Release */ = {
+		DE1D5D32208AC23B009EFF9D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -280,59 +340,59 @@
 			};
 			name = Release;
 		};
-		DE08009B209FBDB5001BAD70 /* Debug */ = {
+		DE1D5D34208AC23B009EFF9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6S6P6UTBE2;
 				INFOPLIST_FILE = Shopify/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jpeng.go.Shopify;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jpeng.go.shopify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		DE08009C209FBDB5001BAD70 /* Release */ = {
+		DE1D5D35208AC23B009EFF9D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6S6P6UTBE2;
 				INFOPLIST_FILE = Shopify/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jpeng.go.Shopify;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jpeng.go.shopify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DE080080209FBDB3001BAD70 /* Build configuration list for PBXProject "Shopify" */ = {
+		DE1D5D19208AC239009EFF9D /* Build configuration list for PBXProject "Shopify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DE080098209FBDB5001BAD70 /* Debug */,
-				DE080099209FBDB5001BAD70 /* Release */,
+				DE1D5D31208AC23B009EFF9D /* Debug */,
+				DE1D5D32208AC23B009EFF9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DE08009A209FBDB5001BAD70 /* Build configuration list for PBXNativeTarget "Shopify" */ = {
+		DE1D5D33208AC23B009EFF9D /* Build configuration list for PBXNativeTarget "Shopify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DE08009B209FBDB5001BAD70 /* Debug */,
-				DE08009C209FBDB5001BAD70 /* Release */,
+				DE1D5D34208AC23B009EFF9D /* Debug */,
+				DE1D5D35208AC23B009EFF9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -340,17 +400,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DE08008F209FBDB3001BAD70 /* Shopify.xcdatamodeld */ = {
+		DE1D5D28208AC239009EFF9D /* Pure_Wallpaper.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DE080090209FBDB3001BAD70 /* Shopify.xcdatamodel */,
+				DE1D5D29208AC239009EFF9D /* Pure_Wallpaper.xcdatamodel */,
 			);
-			currentVersion = DE080090209FBDB3001BAD70 /* Shopify.xcdatamodel */;
-			path = Shopify.xcdatamodeld;
+			currentVersion = DE1D5D29208AC239009EFF9D /* Pure_Wallpaper.xcdatamodel */;
+			path = Pure_Wallpaper.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = DE08007D209FBDB3001BAD70 /* Project object */;
+	rootObject = DE1D5D16208AC239009EFF9D /* Project object */;
 }
