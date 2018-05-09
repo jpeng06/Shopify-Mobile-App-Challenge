@@ -29,4 +29,8 @@ I was assuming that end user will be the person who prepares customers' order at
 - Core data is added for later implementations 
 - background colours are randomly assigned 
 
+## Demo
+
+![Demo](https://github.com/jpeng06/Spotify-Mobile-App-Challenge--/blob/master/demo.png)
+
 2018 © John Peng
