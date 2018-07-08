@@ -16,7 +16,6 @@
 		DE7A545120A267380055F26A /* SettingPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7A544F20A267380055F26A /* SettingPopUpViewController.swift */; };
 		DE7A545220A267380055F26A /* SettingPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7A545020A267380055F26A /* SettingPopUpViewController.xib */; };
 		DE7A545420A287890055F26A /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7A545320A287890055F26A /* Order.swift */; };
-		DEBD3F0B20EEFA8C0079F985 /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD3F0A20EEFA8C0079F985 /* OrderManager.swift */; };
 		DEC8FBD8209155DF0071C26F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8FBD7209155DF0071C26F /* HomeViewController.swift */; };
 		DEC8FBDB209158AD0071C26F /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8FBD9209158AD0071C26F /* ImageCollectionViewCell.swift */; };
 		DEC8FBDC209158AD0071C26F /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC8FBDA209158AD0071C26F /* ImageCollectionViewCell.xib */; };
@@ -34,7 +33,6 @@
 		DE7A544F20A267380055F26A /* SettingPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPopUpViewController.swift; sourceTree = "<group>"; };
 		DE7A545020A267380055F26A /* SettingPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingPopUpViewController.xib; sourceTree = "<group>"; };
 		DE7A545320A287890055F26A /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
-		DEBD3F0A20EEFA8C0079F985 /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
 		DEC8FBD7209155DF0071C26F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DEC8FBD9209158AD0071C26F /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		DEC8FBDA209158AD0071C26F /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				DE7A545320A287890055F26A /* Order.swift */,
-				DEBD3F0A20EEFA8C0079F985 /* OrderManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,7 +199,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEBD3F0B20EEFA8C0079F985 /* OrderManager.swift in Sources */,
 				DEC8FBDB209158AD0071C26F /* ImageCollectionViewCell.swift in Sources */,
 				DEC8FBD8209155DF0071C26F /* HomeViewController.swift in Sources */,
 				DE65F26020F1B12C003990F5 /* OrderCollectionReusableView.swift in Sources */,

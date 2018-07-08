@@ -35,26 +35,16 @@ extension UIViewController {
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func numberOfSections(in _: UICollectionView) -> Int {
-        if let isOrderedByYear = UserDefaults.standard.object(forKey: Constants.keyOrderFlag) as? Bool {
-            isProviceOrder = !isOrderedByYear
-        }
+        updateFlag()
         return (isProviceOrder) ? provinceList.count : yearList.count
     }
 
     func collectionView(_: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        if let isOrderedByYear = UserDefaults.standard.object(forKey: Constants.keyOrderFlag) as? Bool {
-            isProviceOrder = !isOrderedByYear
-        }
-        
-        var i = 0
-        for item in orderList
-            where (!isProviceOrder) ? item.year == yearList[section] :
-                                      item.province == provinceList[section] {
-            i+=1
-        }
-        return i;
+        updateFlag()
+        return (isProviceOrder) ? getOrderCount(province: provinceList[section]) :
+                                  getOrderCount(year: yearList[section])
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -67,9 +57,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
             var order = orderList[indexPath.row]
             
-            if let isOrderedByYear = UserDefaults.standard.object(forKey: Constants.keyOrderFlag) as? Bool {
-                isProviceOrder = !isOrderedByYear
-            }
+            updateFlag()
             
             if (isProviceOrder) {
                 if let item = provinceOrder[provinceList[indexPath.section]] {
@@ -96,13 +84,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if let isOrderedByYear = UserDefaults.standard.object(forKey: Constants.keyOrderFlag) as? Bool {
-            isProviceOrder = !isOrderedByYear
-        }
+        updateFlag()
         switch kind {
         case UICollectionElementKindSectionHeader:
             if let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCell", for: indexPath) as? OrderCollectionReusableView {
-                headerView.textlabel.text = (isProviceOrder) ? provinceList[indexPath.section] : String(yearList[indexPath.section])
+                headerView.textlabel.text = (isProviceOrder) ? "\(provinceList[indexPath.section]) (\(getOrderCount(province: provinceList[indexPath.section])) Orders)" : "\(yearList[indexPath.section]) (\(getOrderCount(year: yearList[indexPath.section])) Orders)"
                 return headerView
             }
         default:
@@ -125,14 +111,9 @@ class HomeViewController: UIViewController {
     let rawURL = "https://shopicruit.myshopify.com/admin/orders.json?"
     typealias objectJSON = [Any]
     typealias arrayJSON = [String: Any]
-    typealias JSONDictionary = [Any]
+    
     let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.light))
-    
-    
-    
-    var listDictionary = [String: [String: [Order]]]()
-    var orderDictionary = [String: [Order]]()
-    
+
     var orderList: [Order] = []
     var pageNumber: Int = 1
     var palette: [UIColor] = [#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1), #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1), #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1), #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)]
@@ -141,40 +122,18 @@ class HomeViewController: UIViewController {
     var yearList : [Int] = []
     
     var isProviceOrder = false
-    
+
     var provinceOrder: Dictionary = [String:[Order]]()
     var yearOrder: Dictionary = [Int:[Order]]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-        fetchData(page: pageNumber)
-        let headerNib = UINib.init(nibName: "OrderCollectionReusableView", bundle: nil)
-        collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderCell")
-        
-        collectionView.contentInset = UIEdgeInsets(top: 70, left: 0, bottom: 0, right: 0)
-        
-    }
-
     func fetchData(page: Int) {
-
-        orderList.removeAll()
-        provinceList.removeAll()
-        yearList.removeAll()
-        provinceOrder.removeAll()
-        yearOrder.removeAll()
-
+        reset()
         let sv = UIViewController.displaySpinner(onView: view)
-
         if let url = URL(string: "\(rawURL)page=\(page)&access_token=\(token)") {
-            // create the session object
+            
             let session = URLSession.shared
-
-            // now create the URLRequest object using the url object
             var request = URLRequest(url: url)
-            request.httpMethod = "GET" // set http method as POST
+            request.httpMethod = "GET"
 
             let task = session.dataTask(with: request as URLRequest, completionHandler: { data, _, error in
 
@@ -268,6 +227,14 @@ class HomeViewController: UIViewController {
             isProviceOrder = true
         }
     }
+    
+    func getOrderCount(province: String) -> Int {
+        return (provinceOrder[province]?.count)!
+    }
+    
+    func getOrderCount(year: Int) -> Int {
+        return (yearOrder[year]?.count)!
+    }
 
     func reloadOrders(isYear: Bool, completion: () -> Void) {
         (isYear) ? reorderByYear() : reorderByProvince()
@@ -331,6 +298,21 @@ class HomeViewController: UIViewController {
             index += 1
         }
     }
+    
+    func updateFlag() {
+        guard let isOrderedByYear = UserDefaults.standard.object(forKey: Constants.keyOrderFlag) as? Bool else {
+            return;
+        }
+        isProviceOrder = !isOrderedByYear
+    }
+    
+    func reset() {
+        orderList.removeAll()
+        provinceList.removeAll()
+        yearList.removeAll()
+        provinceOrder.removeAll()
+        yearOrder.removeAll()
+    }
 
     @IBAction func didNextOnClick(_: Any) {
         pageNumber += 1
@@ -339,13 +321,26 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        // Set up custom cell
+        collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        fetchData(page: pageNumber)
+        
+        // Set up header
+        let headerNib = UINib.init(nibName: "OrderCollectionReusableView", bundle: nil)
+        collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderCell")
+        
+        // Content offset
+        collectionView.contentInset = UIEdgeInsets(top: 70, left: 0, bottom: 0, right: 0)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        guard let flag = UserDefaults.standard.object(forKey: Constants.keyOrderFlag) as? Bool else {
-            return;
-        }
-        isProviceOrder = !flag
+        updateFlag()
     }
 }
 
