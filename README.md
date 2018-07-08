@@ -56,7 +56,7 @@ I was assuming that end user will be the person who prepares customers' order at
 ## Demo
 
 
-<img src="https://github.com/jpeng06/Shopify-Mobile-App-Challenge/blob/master/demo/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-07-08%20at%2000.07.04.png" width="30%">
+<img src="https://github.com/jpeng06/Shopify-Mobile-App-Challenge/blob/master/demo/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-07-08%20at%2000.07.04.png" width="35%">
 <img src="https://github.com/jpeng06/Shopify-Mobile-App-Challenge/blob/master/demo/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-07-08%20at%2000.07.23.png" width="35%">
 <img src="https://github.com/jpeng06/Shopify-Mobile-App-Challenge/blob/master/demo/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-07-08%20at%2000.07.27.png" width="35%">
 <img src="https://github.com/jpeng06/Shopify-Mobile-App-Challenge/blob/master/demo/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-07-08%20at%2000.07.34.png" width="35%">
