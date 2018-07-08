@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		DE1D5D22208AC239009EFF9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D5D21208AC239009EFF9D /* AppDelegate.swift */; };
 		DE1D5D27208AC239009EFF9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1D5D25208AC239009EFF9D /* Main.storyboard */; };
-		DE1D5D2A208AC239009EFF9D /* Pure_Wallpaper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE1D5D28208AC239009EFF9D /* Pure_Wallpaper.xcdatamodeld */; };
 		DE1D5D2C208AC23B009EFF9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1D5D2B208AC23B009EFF9D /* Assets.xcassets */; };
 		DE1D5D2F208AC23B009EFF9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1D5D2D208AC23B009EFF9D /* LaunchScreen.storyboard */; };
+		DE65F26020F1B12C003990F5 /* OrderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65F25E20F1B12C003990F5 /* OrderCollectionReusableView.swift */; };
+		DE65F26120F1B12C003990F5 /* OrderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE65F25F20F1B12C003990F5 /* OrderCollectionReusableView.xib */; };
 		DE7A545120A267380055F26A /* SettingPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7A544F20A267380055F26A /* SettingPopUpViewController.swift */; };
 		DE7A545220A267380055F26A /* SettingPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7A545020A267380055F26A /* SettingPopUpViewController.xib */; };
 		DE7A545420A287890055F26A /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7A545320A287890055F26A /* Order.swift */; };
+		DEBD3F0B20EEFA8C0079F985 /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD3F0A20EEFA8C0079F985 /* OrderManager.swift */; };
 		DEC8FBD8209155DF0071C26F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8FBD7209155DF0071C26F /* HomeViewController.swift */; };
 		DEC8FBDB209158AD0071C26F /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8FBD9209158AD0071C26F /* ImageCollectionViewCell.swift */; };
 		DEC8FBDC209158AD0071C26F /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC8FBDA209158AD0071C26F /* ImageCollectionViewCell.xib */; };
@@ -24,13 +26,15 @@
 		DE1D5D1E208AC239009EFF9D /* Shopify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1D5D21208AC239009EFF9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE1D5D26208AC239009EFF9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DE1D5D29208AC239009EFF9D /* Pure_Wallpaper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pure_Wallpaper.xcdatamodel; sourceTree = "<group>"; };
 		DE1D5D2B208AC23B009EFF9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE1D5D2E208AC23B009EFF9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE1D5D30208AC23B009EFF9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE65F25E20F1B12C003990F5 /* OrderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCollectionReusableView.swift; sourceTree = "<group>"; };
+		DE65F25F20F1B12C003990F5 /* OrderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderCollectionReusableView.xib; sourceTree = "<group>"; };
 		DE7A544F20A267380055F26A /* SettingPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPopUpViewController.swift; sourceTree = "<group>"; };
 		DE7A545020A267380055F26A /* SettingPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingPopUpViewController.xib; sourceTree = "<group>"; };
 		DE7A545320A287890055F26A /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		DEBD3F0A20EEFA8C0079F985 /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
 		DEC8FBD7209155DF0071C26F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DEC8FBD9209158AD0071C26F /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		DEC8FBDA209158AD0071C26F /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -99,8 +103,8 @@
 		DEC739BC20A349A40099EE8E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DE1D5D28208AC239009EFF9D /* Pure_Wallpaper.xcdatamodeld */,
 				DE7A545320A287890055F26A /* Order.swift */,
+				DEBD3F0A20EEFA8C0079F985 /* OrderManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				DEC8FBD7209155DF0071C26F /* HomeViewController.swift */,
+				DE65F25E20F1B12C003990F5 /* OrderCollectionReusableView.swift */,
+				DE65F25F20F1B12C003990F5 /* OrderCollectionReusableView.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -181,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE1D5D2F208AC23B009EFF9D /* LaunchScreen.storyboard in Resources */,
+				DE65F26120F1B12C003990F5 /* OrderCollectionReusableView.xib in Resources */,
 				DE1D5D2C208AC23B009EFF9D /* Assets.xcassets in Resources */,
 				DEC8FBDC209158AD0071C26F /* ImageCollectionViewCell.xib in Resources */,
 				DE1D5D27208AC239009EFF9D /* Main.storyboard in Resources */,
@@ -195,12 +202,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEBD3F0B20EEFA8C0079F985 /* OrderManager.swift in Sources */,
 				DEC8FBDB209158AD0071C26F /* ImageCollectionViewCell.swift in Sources */,
 				DEC8FBD8209155DF0071C26F /* HomeViewController.swift in Sources */,
+				DE65F26020F1B12C003990F5 /* OrderCollectionReusableView.swift in Sources */,
 				DE7A545420A287890055F26A /* Order.swift in Sources */,
 				DE7A545120A267380055F26A /* SettingPopUpViewController.swift in Sources */,
 				DE1D5D22208AC239009EFF9D /* AppDelegate.swift in Sources */,
-				DE1D5D2A208AC239009EFF9D /* Pure_Wallpaper.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,19 +406,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		DE1D5D28208AC239009EFF9D /* Pure_Wallpaper.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DE1D5D29208AC239009EFF9D /* Pure_Wallpaper.xcdatamodel */,
-			);
-			currentVersion = DE1D5D29208AC239009EFF9D /* Pure_Wallpaper.xcdatamodel */;
-			path = Pure_Wallpaper.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = DE1D5D16208AC239009EFF9D /* Project object */;
 }

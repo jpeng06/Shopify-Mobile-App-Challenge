@@ -34,7 +34,89 @@ extension UIViewController {
     }
 }
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func numberOfSections(in _: UICollectionView) -> Int {
+        if let isOrderedByYear = UserDefaults.standard.object(forKey: Constants.keyOrderFlag) as? Bool {
+            isProviceOrder = !isOrderedByYear
+        }
+        return (isProviceOrder) ? provinceList.count : yearList.count
+    }
+
+    func collectionView(_: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if let isOrderedByYear = UserDefaults.standard.object(forKey: Constants.keyOrderFlag) as? Bool {
+            isProviceOrder = !isOrderedByYear
+        }
+        
+        var i = 0
+        for item in orderList
+            where (!isProviceOrder) ? item.year == yearList[section] :
+                                      item.province == provinceList[section] {
+            i+=1
+        }
+        return i;
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as? ImageCollectionViewCell {
+            
+            cell.layer.cornerRadius = 12
+            cell.layer.masksToBounds = false
+            cell.clipsToBounds = true
+            
+            var order = orderList[indexPath.row]
+            
+            if let isOrderedByYear = UserDefaults.standard.object(forKey: Constants.keyOrderFlag) as? Bool {
+                isProviceOrder = !isOrderedByYear
+            }
+            
+            if (isProviceOrder) {
+                if let item = provinceOrder[provinceList[indexPath.section]] {
+                    order = item[indexPath.row]
+                }
+            } else {
+                if let item = yearOrder[yearList[indexPath.section]] {
+                    order = item[indexPath.row]
+                }
+            }
+            
+            cell.setCell(name: order.name,
+                         email: order.email,
+                         address: order.address,
+                         count: order.count,
+                         price: order.price,
+                         date: order.date,
+                         statue: order.status)
+            cell.backgroundColor = palette[order.color]
+            return cell
+        }
+        //this should never be called
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if let isOrderedByYear = UserDefaults.standard.object(forKey: Constants.keyOrderFlag) as? Bool {
+            isProviceOrder = !isOrderedByYear
+        }
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            if let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCell", for: indexPath) as? OrderCollectionReusableView {
+                headerView.textlabel.text = (isProviceOrder) ? provinceList[indexPath.section] : String(yearList[indexPath.section])
+                return headerView
+            }
+        default:
+            fatalError("This should never happen!!")
+        }
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 100)
+    }
+}
+
+class HomeViewController: UIViewController {
 
     @IBOutlet weak var headerView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -45,22 +127,45 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     typealias arrayJSON = [String: Any]
     typealias JSONDictionary = [Any]
     let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.light))
+    
+    
+    
+    var listDictionary = [String: [String: [Order]]]()
+    var orderDictionary = [String: [Order]]()
+    
     var orderList: [Order] = []
     var pageNumber: Int = 1
-    var palette: [UIColor] = [#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1), #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1), #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1), #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1), #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)]
-
+    var palette: [UIColor] = [#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1), #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1), #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1), #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)]
+    
+    var provinceList : [String] = []
+    var yearList : [Int] = []
+    
+    var isProviceOrder = false
+    
+    var provinceOrder: Dictionary = [String:[Order]]()
+    var yearOrder: Dictionary = [Int:[Order]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         fetchData(page: pageNumber)
+        let headerNib = UINib.init(nibName: "OrderCollectionReusableView", bundle: nil)
+        collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderCell")
+        
+        collectionView.contentInset = UIEdgeInsets(top: 70, left: 0, bottom: 0, right: 0)
+        
     }
 
     func fetchData(page: Int) {
 
         orderList.removeAll()
-        
+        provinceList.removeAll()
+        yearList.removeAll()
+        provinceOrder.removeAll()
+        yearOrder.removeAll()
+
         let sv = UIViewController.displaySpinner(onView: view)
 
         if let url = URL(string: "\(rawURL)page=\(page)&access_token=\(token)") {
@@ -101,6 +206,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                                             let firstName = shippingInfo["first_name"] as? String,
                                             let lastName = shippingInfo["last_name"] as? String {
 
+                                            self.provinceList.append(pro)
+                                            self.yearList.append(Int(self.getYear(rawDate: createData))!)
+                                            
                                             self.orderList.append(Order(cName: "\(firstName) \(lastName)",
                                                                         cEmail: email,
                                                                         fAddress: "\(street), \(city), \(pro), \(country)",
@@ -116,6 +224,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     }
 
                     DispatchQueue.main.sync {
+                        self.organize()
                         self.reloadOrders()
                         self.collectionView.reloadData()
                         UIViewController.removeSpinner(spinner: sv)
@@ -132,40 +241,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-
-    func numberOfSections(in _: UICollectionView) -> Int {
-        return 1
-    }
-
-    func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-        // return dataList.count;
-        print(orderList.count)
-        return orderList.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as? ImageCollectionViewCell {
-
-            cell.layer.cornerRadius = 12
-            cell.layer.masksToBounds = false
-            cell.clipsToBounds = true
-
-            let order = orderList[indexPath.row]
-
-            cell.setCell(name: order.name,
-                         email: order.email,
-                         address: order.address,
-                         count: order.count,
-                         price: order.price,
-                         date: order.date,
-                         statue: order.status)
-            cell.backgroundColor = palette[order.color]
-            return cell
-        }
-        //this should never be called
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath)
     }
 
     @IBAction func openSetting(_: Any) {
@@ -186,9 +261,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func reloadOrders() {
         if let isOrderedByYear = UserDefaults.standard.object(forKey: Constants.keyOrderFlag) as? Bool {
             reloadOrders(isYear: isOrderedByYear, completion: {})
+            isProviceOrder = false
         } else {
             // Default: ordered by year
             reloadOrders(isYear: true, completion: {})
+            isProviceOrder = true
         }
     }
 
@@ -221,6 +298,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return "0"
         }
     }
+    
+    func organize() {
+        provinceList = provinceList.unique()
+        yearList = yearList.unique()
+        provinceList = provinceList.sorted {$0.localizedStandardCompare($1) == .orderedAscending}
+        yearList = yearList.sorted {$0 < $1}
+        
+        provinceOrder = orderList.group(by: { $0.province })
+        yearOrder = orderList.group(by: { $0.year })
+    }
 
     func animateTable() {
         collectionView.layoutIfNeeded()
@@ -248,5 +335,29 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func didNextOnClick(_: Any) {
         pageNumber += 1
         fetchData(page: pageNumber)
+    }
+}
+
+extension HomeViewController {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard let flag = UserDefaults.standard.object(forKey: Constants.keyOrderFlag) as? Bool else {
+            return;
+        }
+        isProviceOrder = !flag
+    }
+}
+
+extension Sequence where Iterator.Element: Hashable {
+    func unique() -> [Iterator.Element] {
+        var seen: [Iterator.Element: Bool] = [:]
+        return self.filter { seen.updateValue(true, forKey: $0) == nil }
+    }
+}
+
+extension Sequence {
+    func group<U: Hashable>(by key: (Iterator.Element) -> U) -> [U:[Iterator.Element]] {
+        return Dictionary.init(grouping: self, by: key)
     }
 }
