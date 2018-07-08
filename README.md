@@ -56,14 +56,9 @@ I was assuming that end user will be the person who prepares customers' order at
 ## Demo
 
 
-<img src="https://github.com/jpeng06/Shopify-Mobile-App-Challenge/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-07-07%20at%2023.52.38.png" width="50%">
-
-![](https://github.com/jpeng06/Shopify-Mobile-App-Challenge/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-07-07%20at%2023.52.38.png | width=50)
-
-![](https://github.com/jpeng06/Shopify-Mobile-App-Challenge/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-07-07%20at%2023.52.42.png | width=50)
-
-![](https://github.com/jpeng06/Shopify-Mobile-App-Challenge/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-07-07%20at%2023.52.53.png | width=50)
-
-![](https://github.com/jpeng06/Shopify-Mobile-App-Challenge/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-07-07%20at%2023.53.04.png | width=50)
+<img src="https://github.com/jpeng06/Shopify-Mobile-App-Challenge/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-07-07%20at%2023.52.38.png" width="35%">
+<img src="https://github.com/jpeng06/Shopify-Mobile-App-Challenge/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-07-07%20at%2023.52.42.png" width="35%">
+<img src="https://github.com/jpeng06/Shopify-Mobile-App-Challenge/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-07-07%20at%2023.52.53.png" width="35%">
+<img src="https://github.com/jpeng06/Shopify-Mobile-App-Challenge/blob/master/Simulator%20Screen%20Shot%20-%20iPhone%208%20Plus%20-%202018-07-07%20at%2023.53.04.png" width="35%">
 
 2018 © John Peng
